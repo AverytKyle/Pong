@@ -1,0 +1,83 @@
+body {
+    background-color: #023047;
+}
+
+section {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 70vw;
+    height: 85vh;
+    margin: auto;
+    margin-top: 70px;
+    background-color: #fb8500;
+}
+
+.game-container {
+    margin: auto;
+    border: 1px solid black;
+    width: 60vw;
+    height: 70vh;
+    margin-top: 20px;
+    background-color: #8ecae6;
+}
+
+.score-left {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    left: 30vw;
+    top: 8vh;
+}
+
+.score-right {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30vw;
+    top: 8vh;
+}
+
+.paddle-left {
+    height: 125px;
+    width: 20px;
+    background-color: black;
+    position: fixed;
+    left: 21vw;
+    margin-top: 250px;
+    background-color: #219ebc;
+    border: 1px solid black;
+}
+
+.paddle-right {
+    height: 125px;
+    width: 20px;
+    background-color: black;
+    position: fixed;
+    right: 21vw;
+    background-color: #219ebc;
+    border: 1px solid black;
+}
+
+.ball {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: fixed;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    background-color: #ffb703;
+    border: 1px solid black;
+}
+
+.ball-effect {
+    height: 100%;
+    width: 100%;
+    animation: spin 0.1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
