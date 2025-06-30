@@ -84,13 +84,27 @@ const checkPaddleCollision = () => {
     paddle_2_coord = paddle_2.getBoundingClientRect();
 
     // Check for collision with paddle 1
-    if (x <= paddle_1_coord.right && y >= paddle_1_coord.top && y <= paddle_1_coord.bottom) {
+    if (ball_coord.right >= paddle_1_coord.left && 
+        ball_coord.left <= paddle_1_coord.right &&
+        ball_coord.bottom >= paddle_1_coord.top && 
+        ball_coord.top <= paddle_1_coord.bottom &&
+        dx < 0) { 
+        // Only bounce if ball is moving towards paddle
         dx = -dx;
+        // Push ball out of paddle to prevent sticking
+        x = paddle_1_coord.right + 1;
     }
 
     // Check for collision with paddle 2
-    if (ball_coord.right >= paddle_2_coord.left && y >= paddle_2_coord.top && y <= paddle_2_coord.bottom) {
+    if (ball_coord.left <= paddle_2_coord.right && 
+        ball_coord.right >= paddle_2_coord.left &&
+        ball_coord.bottom >= paddle_2_coord.top && 
+        ball_coord.top <= paddle_2_coord.bottom &&
+        dx > 0) { 
+        // Only bounce if ball is moving towards paddle
         dx = -dx;
+        // Push ball out of paddle to prevent sticking
+        x = paddle_2_coord.left - ball_coord.width - 1;
     }
 }
 

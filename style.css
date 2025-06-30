@@ -81,3 +81,9 @@ section {
         transform: rotate(360deg);
     }
 }
+
+.game-button {
+    margin-top: 20px;
+    background-color: #219ebc;
+    width: 150px;
+}
